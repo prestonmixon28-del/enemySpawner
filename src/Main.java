@@ -2,20 +2,20 @@ public class Main {
     
     public static void main(String[] args) {
 
-        EnemySpawner Forest = new ForestSpawner();
-        EnemySpawner Dungeon = new DungeonSpawner();
+        EquipmentFactory warrior = new WarriorEquipmentFactory();
+        EquipmentFactory mage = new MageEquipmentFactory();
 
-        enemy wolf = Forest.spawnEnemy("wolf");
-        enemy goblin = Forest.spawnEnemy("goblin");
+        weapon warriorWeapon = warrior.createWeapon();
+        armor warriorArmor = warrior.createArmor();
 
+        weapon mageWeapon = mage.createWeapon();
+        armor mageArmor = mage.createArmor();
 
-        enemy skeleton = Dungeon.spawnEnemy("skeleton");
-        enemy slime = Dungeon.spawnEnemy("slime");
+        System.out.println("warrior: " + warriorWeapon.getDescription());
+        System.out.println("warrior: " + warriorArmor.getDescription());
 
-        wolf.attack();
-        goblin.attack();
-        skeleton.attack();
-        slime.attack();
+        System.out.println("mage: " + mageWeapon.getDescription());
+        System.out.println("mage: " + mageArmor.getDescription());
 
     }
 }
